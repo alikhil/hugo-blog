@@ -1,7 +1,6 @@
 ---
 title: "Go Quickstart"
 date: 2018-04-06T16:22:35+03:00
-draft: true
 coverImage: https://cdn-images-1.medium.com/max/2000/1*y4l5IIUkJj5uP9RGM8U-Fg.png # "/images/golang.png" 
 coverMeta: out
 coverSize: partial
