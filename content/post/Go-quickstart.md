@@ -8,6 +8,12 @@ coverSize: partial
 thumbnailImagePosition: left
 thumbnailImage: "images/gopher.png"
 
+keywords:
+- go
+- vscode
+- tutorial
+- quickstart
+
 categories:
 - programming
 
