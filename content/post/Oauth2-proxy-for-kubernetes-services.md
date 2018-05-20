@@ -1,7 +1,6 @@
 ---
 title: "Oauth2 Proxy for Kubernetes Services"
-date: 2018-05-17T20:24:36+03:00
-draft: true
+date: 2018-05-20T21:30:36+03:00
 coverImage: https://cdn-images-1.medium.com/max/2000/1*_MUGy2oo79pWpaBMFVtNsA.jpeg
 coverMeta: out
 coverSize: partial
