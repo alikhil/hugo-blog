@@ -22,6 +22,7 @@ tags:
 - authentication
 - kubernetes
 - google cloud
+- tutorial
 ---
 
 Hello, folks!
