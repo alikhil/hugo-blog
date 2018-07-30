@@ -35,8 +35,9 @@ canonifyurls = true
 
 [author]
   name = "Alik Khilazhev"
-  bio = "Bachelor student in Computer Science"
-  job = "DevOps Engineer"
+  shortBio = "Student at Innopolis University"
+  bio = "Taking bachelor degree in Data Sciente at Innopolis University, but in heart he is Software Engineer. He likes orchestration with Kubernetes and to dance Salsa. Also he likes to write about himself in third person."
+  job = "SRE at Marketplace Technologies"
   location = "Russia"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "alikhil@mail.ru"
