@@ -56,6 +56,12 @@ So, a possible scenario could be:
 
 # Preparation
 
+## Update
+
+### UPD 1.0
+
+Using kube-lego for configuring Let's Encrypt certificates is depricated now. Consider using [cert-manager](https://github.com/jetstack/cert-manager) instead. 
+
 
 ## Kubernetes
 
