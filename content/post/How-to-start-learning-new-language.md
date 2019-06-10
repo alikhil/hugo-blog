@@ -1,9 +1,10 @@
 ---
 title: "Tips for language learners"
 thumbnailImagePosition: top
-coverImage: https://schoolsweek.co.uk/wp-content/uploads/2017/11/Languages.jpg
+coverImage: https://user-images.githubusercontent.com/7482065/59222959-6c216900-8bd3-11e9-8567-5e5fd065b29b.jpg
 coverMeta: out
 coverSize: partial
+
 date: 2018-10-21T22:42:44+03:00
 
 thumbnailImage: "images/posts/world.jpg"
