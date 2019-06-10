@@ -26,6 +26,8 @@ Hello, folks!
 
 Today I want you to share with you tutorial on how to deploy your SPA application to Kubernetes. Tutorial is oriented for those don't very familiar with docker and k8s but want their single page application run in k8s.
 
+<!--more-->
+
 ### Dockerize the application
 
 I expect that you have docker installed in your machine. If it isn't you can install it by following [official installation guide](https://docs.docker.com/install/).
