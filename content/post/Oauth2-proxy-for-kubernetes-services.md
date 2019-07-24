@@ -67,6 +67,8 @@ Using kube-lego for configuring Let's Encrypt certificates is depricated now. Co
 Initialy, when I was writing this post I was using old version of nginx 0.9.0, because it did not work correctly on newer version. Now, I found the problem and it have been fixed in 0.18.0 release. But ingress exposing private services should be updated([more details](https://github.com/helm/charts/issues/5958#issuecomment-408457931)):
 
 ```yaml
+    nginx.ingress.kubernetes.io/auth-signin: https://auth.example.com/oauth2/start?rd=https://$host$request_uri$is_args$args
+
     nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.oauth-proxy.svc.cluster.local:4180/oauth2/auth 
 ```
 
