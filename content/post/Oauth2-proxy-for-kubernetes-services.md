@@ -329,7 +329,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: oauth2-proxy
-
+  namespace: oauth-proxy
   annotations:
     kubernetes.io/tls-acme: "true"
     kubernetes.io/ingress.class: "nginx"
