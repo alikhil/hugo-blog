@@ -1,6 +1,6 @@
 ---
 title: "Build own drone.io docker image"
-date: 2019-09-20T12:30:00+03:00
+date: 2019-09-20T10:30:00+03:00
 # draft: true
 
 coverImage: https://user-images.githubusercontent.com/7482065/65316587-eda96f80-dba2-11e9-81cf-2df2e0ce0309.png
@@ -55,8 +55,6 @@ To build the binary, we need to know what version of go is used for building bin
 
 Then, we use same image to build binary in our dockerfile:
 
-
-
 {{< codeblock "docker/Dockerfile.server.linux.amd64" "Dockerfile" >}}
 
 FROM golang:1.12.9 as builder
@@ -95,6 +93,12 @@ COPY --from=builder /go/src/github.com/drone/drone/release/linux/amd64/drone-ser
 ENTRYPOINT ["/bin/drone-server"]
 
 {{< /codeblock >}}
+
+Also we need to delete .dockerignore file from root of the repo.
+
+```bash
+rm .dockerignore
+```
 
 Then we build docker image like:
 
