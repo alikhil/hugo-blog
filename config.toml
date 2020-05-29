@@ -35,7 +35,7 @@ canonifyurls = true
 
 [author]
   name = "Alik Khilazhev"
-  shortBio = "Student at Innopolis University"
+  shortBio = "Backend Developer and DevOps evangelist at Marketplace Technologies"
   bio = "He likes learning new languages (tambien lenguajes de programación), programming, orchestration with Kubernetes and to dance Salsa. Also he likes to write about himself in third person 🙃"
   job = "Backend Developer at Marketplace Technologies"
   location = "Innopolis, Russia"
@@ -75,12 +75,12 @@ canonifyurls = true
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
   url = "/archives"
 
-[[menu.main]]
-  weight = 5
-  identifier = "projects"
-  name = "Projects"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rocket\"></i>"
-  url = "/pages/projects"
+# [[menu.main]]
+#   weight = 5
+#   identifier = "projects"
+#   name = "Projects"
+#   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rocket\"></i>"
+#   url = "/pages/projects"
 
 [[menu.main]]
   weight = 6
@@ -106,6 +106,13 @@ canonifyurls = true
 
 [[menu.links]]
   weight = 3
+  identifier = "linkedin"
+  name = "LinkedIn"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-linkedin\"></i>"
+  url = "https://www.linkedin.com/in/akhilazhev/"
+
+[[menu.links]]
+  weight = 4
   identifier = "telegram"
   name = "Telegram"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-telegram\"></i>"

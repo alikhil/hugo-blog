@@ -1,7 +1,6 @@
 ---
 title: "Build own drone.io docker image"
 date: 2019-09-20T10:30:00+03:00
-# draft: true
 
 coverImage: https://user-images.githubusercontent.com/7482065/65316587-eda96f80-dba2-11e9-81cf-2df2e0ce0309.png
 coverMeta: out
