@@ -35,10 +35,9 @@ canonifyurls = true
 
 [author]
   name = "Alik Khilazhev"
-  shortBio = "Backend Developer and DevOps evangelist at Marketplace Technologies"
-  bio = "He likes learning new languages (tambien lenguajes de programación), programming, orchestration with Kubernetes and to dance Salsa. Also he likes to write about himself in third person 🙃"
-  job = "Backend Developer at Marketplace Technologies"
-  location = "Innopolis, Russia"
+  bio = "DevOps engineer and Golang enthusiast"
+  job = "Lead DevOps Engineer @ Uzum Market"
+  location = "Barcelona, Spain"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "alikhil@mail.ru"
   # Your profile picture
@@ -93,7 +92,7 @@ canonifyurls = true
   weight = 1
   identifier = "github"
   name = "GitHub"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
+  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-github\" aria-hidden=\"true\"></i>"
   url = "https://github.com/alikhil"
 
 
@@ -101,21 +100,21 @@ canonifyurls = true
   weight = 2
   identifier = "stackoverflow"
   name = "Stack Overflow"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
+  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-stack-overflow\" aria-hidden=\"true\"></i>"
   url = "https://stackoverflow.com/users/4731371/alik-khilazhev"
 
 [[menu.links]]
   weight = 3
   identifier = "linkedin"
   name = "LinkedIn"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-linkedin\"></i>"
+  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-linkedin\" aria-hidden=\"true\"></i>"
   url = "https://www.linkedin.com/in/akhilazhev/"
 
 [[menu.links]]
   weight = 4
   identifier = "telegram"
   name = "Telegram"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-telegram\"></i>"
+  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-telegram\" aria-hidden=\"true\"></i>"
   url = "https://t.me/alikhil"
 
 [[menu.misc]]
@@ -129,7 +128,7 @@ canonifyurls = true
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
-  # Default format is: January 2, 2006 
+  # Default format is: January 2, 2006
   dateFormat = "2 January 2006"
 
   # Global keywords configuration. Following keywords will be add to every pages
@@ -142,7 +141,7 @@ canonifyurls = true
   # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
   clearReading = true
 
-  # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo". 
+  # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo".
   # If false it will flat categories.
   hierarchicalCategories = true
 
@@ -215,17 +214,17 @@ canonifyurls = true
   # Tranquilpeak configuration > Theme configuration > sharing-options
   [[params.sharingOptions]]
     name = "Facebook"
-    icon = "fa-facebook-official"
+    icon = "fab fa-facebook-square"
     url = "https://www.facebook.com/sharer/sharer.php?u=%s"
 
   [[params.sharingOptions]]
     name = "Twitter"
-    icon = "fa-twitter"
+    icon = "fab fa-twitter"
     url = "https://twitter.com/intent/tweet?text=%s"
 
   [[params.sharingOptions]]
     name = "Google+"
-    icon = "fa-google-plus"
+    icon = "fab fa-google-plus"
     url = "https://plus.google.com/share?url=%s"
 
   [params.header.rightLink]
