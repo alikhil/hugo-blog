@@ -35,8 +35,8 @@ canonifyurls = true
 
 [author]
   name = "Alik Khilazhev"
-  bio = "DevOps engineer and Golang enthusiast"
-  job = "Lead DevOps Engineer @ Uzum Market"
+  bio = "Software Engineer, Open Source Enthusiast"
+  job = "Senior Site Reliability Engineer @ Criteo"
   location = "Barcelona, Spain"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "alikhil@mail.ru"
