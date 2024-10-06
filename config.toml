@@ -13,25 +13,13 @@
 # use grunt task `build` to synchronize assets
 
 baseURL = "https://alik.page/"
-# [params]
-#   dateFormat = "2 January 2006"
 
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Alik's blog"
 theme = "tranquilpeak"
 disqusShortname = "alikhil"
-googleAnalytics = "UA-119385062-1"
-paginate = 7
 canonifyurls = true
-
-[permalinks]
-  post = "/:year/:month/:slug/"
-
-[taxonomies]
-  tag = "tags"
-  category = "categories"
-  archive = "archives"
 
 [author]
   name = "Alik Khilazhev"
@@ -47,6 +35,17 @@ canonifyurls = true
   # twitter = "thibaudlepretre"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
   # googlePlus = "+ThibaudLepretre"
+
+[pagination]
+  pagerSize = 7
+
+[permalinks]
+  post = "/:year/:month/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  archive = "archives"
 
 # Menu Configuration
 [[menu.main]]
@@ -238,6 +237,8 @@ canonifyurls = true
     class = ""
     icon = ""
     url = "/#about"
+
+
 
   # Customize link of author avatar in sidebar
   # [params.sidebar.profile]
