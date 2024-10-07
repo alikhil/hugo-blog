@@ -3,7 +3,7 @@
 echo -e "\nDeploying updates to GitHub...\n"
 
 # Build the project.
-hugo -t tranquilpeak # if using a theme, replace with `hugo -t <YOURTHEME>`
+hugo -t PaperModX # if using a theme, replace with `hugo -t <YOURTHEME>`
 
 # Go To Public folder
 cd public
