@@ -1,8 +1,8 @@
 ---
 title: "Say hello to Hugo"
-thumbnailImagePosition: top
+thumbnailImagePosition: left
 thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg
-coverImage: //d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city.jpg
+# coverImage: //d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city.jpg
 date: 2018-05-17T16:03:44+03:00
 
 categories:

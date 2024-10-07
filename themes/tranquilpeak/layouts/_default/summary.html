@@ -51,7 +51,7 @@
       </h1>
       {{ partial "post/meta" . }}
     </div>
-    <div class="postShorten-excerpt">
+    <!-- <div class="postShorten-excerpt">
       {{ if .Params.Summary }}
         {{ .Params.Summary | markdownify }}
       {{ else }}
@@ -69,7 +69,7 @@
           </span>
         {{ end }}
       </p>
-    </div>
+    </div> -->
   </div>
   {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
     <a href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">

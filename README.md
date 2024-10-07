@@ -2,7 +2,7 @@
 
 Source of alikhil.github.io blog
 
-Powered by [Hugo](https://gohugo.io) engine and [Tranquilpeak](https://tranquilpeak.kakawait.com/) theme
+Powered by [Hugo](https://gohugo.io) engine and [PaperModX](https://reorx.github.io/hugo-PaperModX/docs/f) theme
 
 Run `hugo server` to serve it locally.
 
@@ -12,4 +12,10 @@ Run `hugo server` to serve it locally.
 git clone git@github.com:alikhil/hugo-blog.git
 # pull submodules
 git submodule update --init --recursive
+```
+
+## Build
+
+```bash
+hugo
 ```

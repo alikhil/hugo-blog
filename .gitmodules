@@ -5,3 +5,6 @@
 	path = public
 	url = git@github.com:alikhil/alikhil.github.io.git
 	branch = master
+[submodule "themes/PaperModX"]
+	path = themes/PaperModX
+	url = https://github.com/reorx/hugo-PaperModX.git

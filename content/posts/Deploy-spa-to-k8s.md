@@ -38,9 +38,7 @@ So, I have cloned it, installed dependencies and built:
 
 ```bash
 git clone https://github.com/gothinkster/vue-realworld-example-app
-
 yarn
-
 yarn build
 ```
 
@@ -48,7 +46,9 @@ Next step is to decide how our application will be served. There are bunch of po
 
 To serve SPA we need to return all requested files if they exist or otherwise fallback to index.html. To do so I wrote the following nginx config:
 
-{{< codeblock "nginx.conf" "nginx" >}}
+**nginx.conf**
+
+```nginx
 # ...
 # other configs
 
@@ -62,19 +62,18 @@ server {
   }
 
 }
-{{< /codeblock >}}
-
+```
 
 Full config file can be found in [my fork of the repo](https://github.com/alikhil/vue-realworld-example-app/blob/master/nginx.conf)
 
 Then, we need to write **Dockerfile** for building image with our application. Here it is:
 
-{{< codeblock "Dockerfile" "docker" >}}
+```Dockerfile
 FROM nginx
 WORKDIR /root/
 COPY ./dist /app
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-{{< /codeblock >}}
+```
 
 We assume that artifacts of build placed in the `dist` directory and so that during the docker build the content of `dist` directory copied into containers `/app` directory.
 
@@ -106,7 +105,9 @@ docker push alikhil/my-spa:0.1
 
 To run the application in k8s we will use `Deployment` resource type. Here it is:
 
-{{< codeblock "deployment.yaml" "yml" >}}
+**deployment.yaml**
+
+```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -129,7 +130,7 @@ spec:
           limits:
             cpu: 150m
             memory: 250Mi
-{{< /codeblock >}}
+```
 
 Then we create deployment by running `kubectl apply -f deployment.yaml` and newly created pods can found:
 
@@ -141,8 +142,9 @@ my-spa-84b6dcd48d-mhv9f   1/1     Running   0          18s
 
 Then we need to expose our app to the world. It can be done by using service of type NodePort or via Ingress. We will do it with Ingress. For that we will need service:
 
-{{< codeblock "service.yaml" "yaml" >}}
+**service.yaml**
 
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -159,11 +161,13 @@ spec:
   selector:
     app: my-spa
 
-{{< /codeblock >}}
+```
 
 And ingress itself:
 
-{{< codeblock "ingress.yaml" "yaml" >}}
+**ingress.yaml**
+
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -183,8 +187,7 @@ spec:
         backend:
           serviceName: my-spa
           servicePort: 80
-
-{{< /codeblock >}}
+```
 
 ```bash
 kubectl apply -f ingress.yaml -f service.yaml

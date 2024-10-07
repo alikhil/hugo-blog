@@ -54,8 +54,9 @@ To build the binary, we need to know what version of go is used for building bin
 
 Then, we use same image to build binary in our dockerfile:
 
-{{< codeblock "docker/Dockerfile.server.linux.amd64" "Dockerfile" >}}
+**docker/Dockerfile.server.linux.amd64**
 
+```Dockerfile
 FROM golang:1.12.9 as builder
 
 WORKDIR /go/src/github.com/drone/drone
@@ -91,7 +92,7 @@ COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /go/src/github.com/drone/drone/release/linux/amd64/drone-server /bin/
 ENTRYPOINT ["/bin/drone-server"]
 
-{{< /codeblock >}}
+```
 
 Also we need to delete .dockerignore file from root of the repo.
 

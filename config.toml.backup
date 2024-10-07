@@ -17,7 +17,7 @@ baseURL = "https://alik.page/"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Alik's blog"
-theme = "tranquilpeak"
+theme = "PaperModX"
 disqusShortname = "alikhil"
 canonifyurls = true
 
@@ -28,16 +28,21 @@ canonifyurls = true
   location = "Barcelona, Spain"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "alikhil@mail.ru"
-  # Your profile picture
-  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-#   picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
-  # Your Twitter username without the @. E.g : thibaudlepretre
-  # twitter = "thibaudlepretre"
-  # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
-  # googlePlus = "+ThibaudLepretre"
 
 [pagination]
   pagerSize = 7
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+
+[markup.highlight]
+  noClasses = false
+  style = "dracula"
+  codeFences = true
+  guessSyntax= true
+  lineNos = false
+
 
 [permalinks]
   post = "/:year/:month/:slug/"
@@ -102,35 +107,28 @@ canonifyurls = true
   url = "https://github.com/alikhil"
 
 
-[[menu.links]]
-  weight = 2
-  identifier = "stackoverflow"
-  name = "Stack Overflow"
-  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-stack-overflow\" aria-hidden=\"true\"></i>"
-  url = "https://stackoverflow.com/users/4731371/alik-khilazhev"
+[params.homeInfoParams]
+    Title = "PaperModX"
+    Content = """
+      Welcome to demo of hugo's theme PaperModX.
 
-[[menu.links]]
-  weight = 3
-  identifier = "linkedin"
-  name = "LinkedIn"
-  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-linkedin\" aria-hidden=\"true\"></i>"
-  url = "https://www.linkedin.com/in/akhilazhev/"
+      - **PaperModX** is a simple but fast and responsive theme with useful feature-set that enhances UX.
 
-[[menu.links]]
-  weight = 4
-  identifier = "telegram"
-  name = "Telegram"
-  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-telegram\" aria-hidden=\"true\"></i>"
-  url = "https://t.me/alikhil"
+      - PaperModX is based on theme [PaperMod](https://github.com/adityatelange/hugo-PaperMod).
 
-[[menu.misc]]
-  weight = 1
-  identifier = "rss"
-  name = "RSS"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
-  url = "/index.xml"
+      To get started, please head to the [Docs](docs).
 
+      To see examples of different contents, head to [examples tag](tags/example).
+      """
 [params]
+
+  # papermodx
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowToc = true
+  TocOpen = true
+  TocSide = 'right'
+
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
@@ -180,7 +178,7 @@ canonifyurls = true
   imageGallery = true
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
-  thumbnailImage = true
+  thumbnailImage = false
   # Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
   # Set this value to `right` if you have old posts to keep the old style on them
   # and define `thumbnailImagePosition` on a post to overwrite this setting
@@ -192,58 +190,25 @@ canonifyurls = true
 
   # Your favicon path, default is "/favicon.png"
   favicon = "/favicon.ico"
-  # Header configuration
-  # The link at the right of the header is customizable
-  # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
-  # By default, author's gravatar or author's picture is displayed.
-  #     url: /#search
-  #     icon: search
-  #     class: st-search-show-outputs
-
-  # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
-  # they have to be referred from static root. Example
-  # [[params.customCSS]]
-  #   href = "css/mystyle.css"
-
-  # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
-  # they have to be referred from static root. Example
-  # [[params.customJS]]
-  #   src = "js/myscript.js"
-
-  # Display `Next` on left side of the pagination, and `Prev` on right side one.
-  # If you set this value to `true`, these positions swap.
-  # swapPaginator = true
-
-  # Sharing options
-  # Comment and uncomment to enable or disable sharing options
-  # If you wanna add a sharing option, read user documentation :
-  # Tranquilpeak configuration > Theme configuration > sharing-options
-  [[params.sharingOptions]]
-    name = "Facebook"
-    icon = "fab fa-facebook-square"
-    url = "https://www.facebook.com/sharer/sharer.php?u=%s"
-
-  [[params.sharingOptions]]
-    name = "Twitter"
-    icon = "fab fa-twitter"
-    url = "https://twitter.com/intent/tweet?text=%s"
-
-  [[params.sharingOptions]]
-    name = "Google+"
-    icon = "fab fa-google-plus"
-    url = "https://plus.google.com/share?url=%s"
-
-  [params.header.rightLink]
-    class = ""
-    icon = ""
-    url = "/#about"
 
 
 
-  # Customize link of author avatar in sidebar
-  # [params.sidebar.profile]
-  #   url = "/#about"
+[[params.socialIcons]]
+name = "github-simple"
+url = "https://github.com/alikhil"
 
-  # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
-  # [params.footer]
-  #   copyright = "<a href=\"https://github.com/alikhil\">kakawait</a>"
+[[params.socialIcons]]
+name = "telegram-simple"
+url = "https://t.me/alikhil"
+
+[[params.socialIcons]]
+name = "stackoverflow"
+url = "https://stackoverflow.com/users/4731371/alik-khilazhev"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/akhilazhev/"
+
+[[params.socialIcons]]
+name = "rss-simple"
+url = "index.xml"

@@ -1,0 +1,99 @@
+baseURL: 'https://alik.page/'
+languageCode: en-us
+defaultContentLanguage: en-us
+title: alikhil
+theme: PaperModX
+
+enableEmoji: true
+paginate: 5
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    style: dracula
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+permalinks:
+  post: '/:year/:month/:slug/'
+taxonomies:
+  tag: tags
+  category: categories
+  archive: archives
+menu:
+  main:
+    - weight: 1
+      identifier: home
+      name: Home
+      url: /
+    - weight: 10
+      identifier: search
+      name: Search
+      url: /search
+    - weight: 9
+      identifier: archives
+      name: Archives
+      url: /archives
+    - weight: 4
+      identifier: talks
+      name: Talks
+      url: /pages/talks
+    - weight: 2
+      identifier: posts
+      name: Posts
+      url: /posts/
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
+
+params:
+  author:
+  - Alik Khilazhev
+  env: production
+  defaultTheme: auto
+  profileMode:
+    enabled: true
+    title: "Alik Khilazhev"
+    subtitle: "Software Engineer, Open Source Enthusiast"
+    imageUrl: "https://gravatar.com/avatar/7ec6984a0863048192220fda53b391d25ec147ba662cf6523d39815d04b8010b?s=300" # optional
+    imageTitle: "It's me" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowToc: true
+  TocOpen: true
+  TocSide: right
+  ShowBreadCrumbs: true
+
+  DateFormat: 2 January 2006
+  ShowPostNavLinks: true
+
+  socialIcons:
+    - name: github-simple
+      url: 'https://github.com/alikhil'
+    - name: telegram-simple
+      url: 'https://t.me/alikhil'
+    - name: stackoverflow
+      url: 'https://stackoverflow.com/users/4731371/alik-khilazhev'
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/akhilazhev/'
+    - name: rss-simple
+      url: index.xml
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 3
+    keys: ["title", "permalink", "summary", "content"]

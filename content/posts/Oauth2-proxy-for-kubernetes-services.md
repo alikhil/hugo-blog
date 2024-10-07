@@ -60,7 +60,7 @@ So, a possible scenario could be:
 
 ### UPD 1.0(07/30/18)
 
-Using kube-lego for configuring Let's Encrypt certificates is depricated now. Consider using [cert-manager](https://github.com/jetstack/cert-manager) instead. 
+Using kube-lego for configuring Let's Encrypt certificates is depricated now. Consider using [cert-manager](https://github.com/jetstack/cert-manager) instead.
 
 ### UPD 2.0(08/24/18)
 
@@ -69,7 +69,7 @@ Initialy, when I was writing this post I was using old version of nginx 0.9.0, b
 ```yaml
     nginx.ingress.kubernetes.io/auth-signin: https://auth.example.com/oauth2/start?rd=https://$host$request_uri$is_args$args
 
-    nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.oauth-proxy.svc.cluster.local:4180/oauth2/auth 
+    nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.oauth-proxy.svc.cluster.local:4180/oauth2/auth
 ```
 
 
@@ -150,9 +150,9 @@ kubectl expose deployment simple-http --name example-service --port=80 --target-
 ```
 
 
-{{< codeblock "example-ing.yaml" "yml" >}}
+**example-ing.yaml**
 
-
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -173,7 +173,7 @@ spec:
     - hosts:
         - "service.example.com"
       secretName: ing-tls
-{{< /codeblock >}}
+```
 
 ```bash
 kubectl apply -f example-ing.yaml
@@ -217,7 +217,9 @@ kns oauth-proxy # I am using kubectx tool -> https://github.com/ahmetb/kubectx
 
 ## Deploy secret
 
-{{< codeblock "secret.yml" "yml" >}}
+**secret.yml**
+
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -228,7 +230,7 @@ data:
   github-client-secret: base64(YOUR_CLIENT_SECRET)
   cookie-secret: base64(random_string)
 
-{{< /codeblock >}}
+```
 
 ```bash
 kubectl create -f secret.yml
@@ -236,7 +238,9 @@ kubectl create -f secret.yml
 
 ## Deploy deployment
 
-{{< codeblock "oauth-proxy.deployment.yml" "yml" >}}
+**oauth-proxy.deployment.yml**
+
+```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -256,7 +260,7 @@ spec:
     spec:
       containers:
       - name: oauth2-proxy
-        image: alikhil/oauth2_proxy:2.2.2 
+        image: alikhil/oauth2_proxy:2.2.2
         imagePullPolicy: Always
         args:
         - --provider=github
@@ -264,7 +268,7 @@ spec:
         - --upstream=file:///dev/null
         - --http-address=0.0.0.0:4180
         - --whitelist-domain=.example.com
-        - --cookie-domain=.example.com 
+        - --cookie-domain=.example.com
         # - --cookie-expire duration: expire timeframe for cookie (default 168h0m0s)
         # - --cookie-name string: the name of the cookie that the oauth_proxy creates (default "_oauth2_proxy")
         # - --cookie-refresh duration: refresh the cookie after this duration; 0 to disable
@@ -289,8 +293,7 @@ spec:
         - containerPort: 4180
           protocol: TCP
 
-{{< /codeblock >}}
-
+```
 
 ```bash
 kubectl create -f oauth-proxy.deployment.yml
@@ -298,8 +301,9 @@ kubectl create -f oauth-proxy.deployment.yml
 
 ## Deploy service
 
-{{< codeblock "oauth-service.yml" "yml" >}}
+**oauth-service.yml**
 
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -316,8 +320,7 @@ spec:
     targetPort: 4180
   selector:
     k8s-app: oauth2-proxy
-
-{{< /codeblock >}}
+```
 
 ```bash
 kubectl create -f oauth-service.yml
@@ -325,8 +328,9 @@ kubectl create -f oauth-service.yml
 
 ## Deploy ingress
 
-{{< codeblock "oauth-ing.yml" "yml" >}}
+**oauth-ing.yml**
 
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -335,7 +339,7 @@ metadata:
   annotations:
     kubernetes.io/tls-acme: "true"
     kubernetes.io/ingress.class: "nginx"
-    
+
 spec:
   rules:
   - host: auth.example.com
@@ -350,7 +354,7 @@ spec:
     - auth.example.com
     secretName: oauth-proxy-tls
 
-{{< /codeblock >}}
+```
 
 ```bash
 kubectl create -f oauth-ing.yml
@@ -360,8 +364,9 @@ kubectl create -f oauth-ing.yml
 
 You can update ingress that we used while configuring nginx-ingress or create a new one:
 
-{{< codeblock "example-ing.yml" "yml" >}}
+**example-ing.yml**
 
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -385,7 +390,7 @@ spec:
         - service.example.com
       secretName: ing-tls
 
-{{< /codeblock >}}
+```
 
 ```bash
 kubectl apply -f example-ing.yml
