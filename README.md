@@ -4,7 +4,7 @@ Source of alikhil.github.io blog
 
 Powered by [Hugo](https://gohugo.io) engine and [PaperModX](https://reorx.github.io/hugo-PaperModX/docs/f) theme
 
-Run `hugo server` to serve it locally.
+Run `hugo server -D -E -F --forceSyncStatic -e dev` to serve it locally.
 
 ## Pull locally
 
