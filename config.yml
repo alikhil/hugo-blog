@@ -86,6 +86,8 @@ params:
       url: 'https://stackoverflow.com/users/4731371/alik-khilazhev'
     - name: linkedin
       url: 'https://www.linkedin.com/in/akhilazhev/'
+    - name: vas3k.club
+      url: https://vas3k.club/user/alikhil/
     - name: rss-simple
       url: index.xml
 
