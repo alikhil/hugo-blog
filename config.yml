@@ -88,6 +88,8 @@ params:
       url: 'https://www.linkedin.com/in/akhilazhev/'
     - name: vas3k.club
       url: https://vas3k.club/user/alikhil/
+    - name: patreon
+      url: https://patreon.com/alikhil
     - name: rss-simple
       url: index.xml
 
