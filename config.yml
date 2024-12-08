@@ -74,6 +74,8 @@ params:
   TocSide: right
   ShowBreadCrumbs: true
 
+  comments: true
+
   DateFormat: 2 January 2006
   ShowPostNavLinks: true
 
