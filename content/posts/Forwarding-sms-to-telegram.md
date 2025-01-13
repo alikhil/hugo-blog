@@ -74,9 +74,7 @@ Using Docker Compose, set up your configuration:
 ```yaml
 services:
   gammu:
-    build:
-      context: https://github.com/kutovoys/sms-to-telegram.git#main
-      dockerfile: Dockerfile.alpine
+    image: ghcr.io/alikhil/sms-to-telegram:latest
     volumes:
     - type: bind
       source: /dev/serial/by-id/usb-HUAWEI_HUAWEI_Mobile-if00-port0 # Change this to your device path
@@ -87,6 +85,7 @@ services:
       - PIN=<your sim card pin>
       - CHAT_ID=<telegram chat/channel ID>
       - DEVICE=/dev/modem
+      - PROTOCOL=at
     cap_add:
     - NET_ADMIN
     - SYS_MODULE
@@ -119,11 +118,11 @@ To test SMS reception, you can use free online SMS-sending services (search for 
 
 The [Gammu library](https://wammu.eu/libgammu/) provides a unified interface for working with phones and modems from various manufacturers.
 
-On top of that, there's the [Gammu SMS Daemon](https://wammu.eu/smsd/), which receives SMS messages and triggers a custom script—in our case, [script](https://github.com/kutovoys/sms-to-telegram/blob/main/sms_to_telegram.sh) to send the messages to Telegram.
+On top of that, there's the [Gammu SMS Daemon](https://wammu.eu/smsd/), which receives SMS messages and triggers a custom script—in our case, [script](https://github.com/alikhil/sms-to-telegram/blob/main/sms_to_telegram.sh) to send the messages to Telegram.
 
 ## Final Thoughts
 
-Thanks to [@kutovoys](https://github.com/kutovoys) for the idea and Docker image!
+Thanks to [@kutovoys](https://github.com/kutovoys) for the idea and [Docker image](https://github.com/kutovoys/sms-to-telegram)!
 
 This is a simple, affordable, and scalable solution—especially if you’re into self-hosting.
 
