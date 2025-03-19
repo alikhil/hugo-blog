@@ -16,6 +16,8 @@ Today I want to share with you another reason why you should avoid using `http.D
 
 <!--more-->
 
+## The Story
+
 As an SRE at Criteo, I both read and write code. Last week, I worked on patching [Updatecli](https://github.com/updatecli/updatecli) — an upgrade automation tool written in Go.
 
 The [patch](https://github.com/updatecli/updatecli/pull/4432) itself was just ~15 lines of code. But then I spent three days debugging a strange authorization bug in an unrelated part of the code.
@@ -52,6 +54,8 @@ if opts.Client == nil {
     opts.Client = http.DefaultClient
 }
 ```
+
+## The Fix
 
 To prevent this, I had to change the code to:
 
