@@ -1,6 +1,6 @@
 ---
 title: "Talks"
-date: 2019-06-10T23:10:25+03:00
+date: 2025-03-19T23:10:25+03:00
 clearReading: true
 showMeta: false
 comments: false

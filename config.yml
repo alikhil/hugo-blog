@@ -5,7 +5,8 @@ title: alikhil
 theme: PaperModX
 
 enableEmoji: true
-paginate: 5
+pagination:
+  pagerSize: 5
 
 markup:
   goldmark:
@@ -41,6 +42,10 @@ menu:
       identifier: talks
       name: Talks
       url: /pages/talks
+    - weight: 3
+      identifier: projects
+      name: Projects
+      url: /pages/projects
     - weight: 2
       identifier: posts
       name: Posts
