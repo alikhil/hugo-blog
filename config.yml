@@ -8,6 +8,8 @@ enableEmoji: true
 pagination:
   pagerSize: 5
 
+googleAnalytics: G-RSGLKK3DPR
+
 markup:
   goldmark:
     renderer:
