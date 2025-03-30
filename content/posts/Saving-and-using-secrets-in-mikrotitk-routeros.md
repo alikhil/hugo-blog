@@ -1,6 +1,6 @@
 ---
 title: "Storing and using secrets in Mikrotik RouterOS"
-date: 2025-03-30 16:01:25
+date: 2025-03-30T16:01:25+03:00
 
 cover:
     image: "https://en.meming.world/images/en/8/8e/All_Right_Then%2C_Keep_Your_Secrets.jpg"
