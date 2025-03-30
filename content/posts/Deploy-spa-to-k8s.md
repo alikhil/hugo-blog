@@ -11,7 +11,7 @@ coverCaption: Photo by Calebe Miranda from Pexels
 thumbnailImage: "images/posts/k8s_logo.png"
 thumbnailImagePosition: left
 
-keywords:
+tags:
 - spa
 - tutorial
 - k8s

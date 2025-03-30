@@ -6,7 +6,7 @@ thumbnailImage: https://cdn.dribbble.com/users/65539/screenshots/5547006/drone-l
 # thumbnailImage: "images/posts/drone-logo.png"
 thumbnailImagePosition: left
 
-keywords:
+tags:
 - ci/cd
 - tutorial
 - drone.io

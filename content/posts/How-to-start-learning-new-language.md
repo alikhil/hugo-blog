@@ -18,7 +18,7 @@ tags:
 - languages
 - spanish
 
-keywords:
+tags
 - spanish
 - language
 - tips

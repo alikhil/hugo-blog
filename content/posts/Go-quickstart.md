@@ -8,7 +8,7 @@ coverSize: partial
 thumbnailImagePosition: left
 thumbnailImage: "images/gopher.png"
 
-keywords:
+tags:
 - go
 - vscode
 - tutorial

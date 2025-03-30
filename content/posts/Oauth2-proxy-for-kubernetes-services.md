@@ -8,7 +8,7 @@ coverSize: partial
 thumbnailImage: "images/posts/k8s_logo.png"
 thumbnailImagePosition: left
 
-keywords:
+tags
 - proxy
 - authentication
 - kubernetes
