@@ -1,4 +1,4 @@
-baseURL: 'https://alik.page/'
+baseURL: 'https://alikhil.dev/'
 languageCode: en-us
 defaultContentLanguage: en-us
 title: alikhil
@@ -68,9 +68,9 @@ params:
   profileMode:
     enabled: true
     title: "Alik Khilazhev"
-    subtitle: "Software Engineer, Open Source Enthusiast"
+    subtitle: "DevOps / Site Reliability Engineer, Open Source Enthusiast"
     imageUrl: "https://gravatar.com/avatar/7ec6984a0863048192220fda53b391d25ec147ba662cf6523d39815d04b8010b?s=300" # optional
-    imageTitle: "It's me" # optional
+    imageTitle: "" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
 
@@ -94,7 +94,7 @@ params:
     - name: stackoverflow
       url: 'https://stackoverflow.com/users/3443964/alik-khilazhev'
     - name: linkedin
-      url: 'https://www.linkedin.com/in/akhilazhev/'
+      url: 'https://www.linkedin.com/in/alikhil/'
     - name: vas3k.club
       url: https://vas3k.club/user/alikhil/
     - name: patreon
