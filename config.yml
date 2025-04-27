@@ -74,6 +74,8 @@ params:
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
 
+  description: "Blog about infrastructure, self-hosting and other technical stuff"
+
   ShowShareButtons: true
   ShowReadingTime: true
   ShowToc: true
