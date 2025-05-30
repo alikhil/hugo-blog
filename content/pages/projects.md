@@ -30,6 +30,8 @@ Here is a list of opensource projects I've worked on:
 
 - [fluent-kubernetes-daemonset](https://github.com/fluent/fluentd-kubernetes-daemonset/pull/328/files) - fixed json parsing in fluentd plugin for kubernetes.
 
-- [opentelemetry-go](https://github.com/open-telemetry/opentelemetry-go/pull/1789) - Adds `k8s.node.name` and `k8s.node.uid` attribute keys to the `semconv` package.
+- [opentelemetry-go](https://github.com/open-telemetry/opentelemetry-go/pull/1789) - added `k8s.node.name` and `k8s.node.uid` attribute keys to the `semconv` package.
+
+- [prometheus-community/helm-charts](https://github.com/prometheus-community/helm-charts/pull/5650) - fixed PodDisruption Budget for `kube-prometheus-stack` chart.
 
 See all my contributions on [GitHub](https://github.com/pulls?page=1&q=is%3Amerged+is%3Apr+author%3Aalikhil+archived%3Afalse+-user%3AKazanExpress+-user%3Aalikhil+-user%3ADayMarket).
