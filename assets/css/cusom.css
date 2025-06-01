@@ -1,0 +1,4 @@
+figure > figcaption {
+   color: var(--secondary-text-color);
+   font-weight: normal;
+}
