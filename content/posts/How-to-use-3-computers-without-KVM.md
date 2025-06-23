@@ -128,6 +128,7 @@ Here is a demo video:
 ### Cons
 
 * Switching the mouse takes longer since there is only one way iteration over the connected devices.
+* Three actions are needed to switch all peripheral devices, as opposed to one action with a KVM.
 * I still need to manually reconnect other peripheral devices, e.g. web camera.
 
 ## Final thoughts
