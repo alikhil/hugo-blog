@@ -1,3 +1,5 @@
+# reference https://github.com/reorx/blog/blob/master/config.yaml
+
 baseURL: 'https://alikhil.dev/'
 languageCode: en-us
 defaultContentLanguage: en-us
@@ -65,14 +67,20 @@ params:
   - Alik Khilazhev
   env: production
   defaultTheme: auto
-  profileMode:
-    enabled: true
-    title: "Alik Khilazhev"
-    subtitle: "DevOps / Site Reliability Engineer, Open Source Enthusiast"
+  homeInfoParams:
+    Title: "Alik Khilazhev"
+    Content: DevOps / Site Reliability Engineer, Open Source Enthusiast
     imageUrl: "https://gravatar.com/avatar/7ec6984a0863048192220fda53b391d25ec147ba662cf6523d39815d04b8010b?s=300" # optional
     imageTitle: "" # optional
-    imageWidth: 120 # custom size
-    imageHeight: 120 # custom size
+
+  # profileMode:
+  #   enabled: true
+  #   title: "Alik Khilazhev"
+  #   subtitle: "DevOps / Site Reliability Engineer, Open Source Enthusiast"
+  #   imageUrl: "https://gravatar.com/avatar/7ec6984a0863048192220fda53b391d25ec147ba662cf6523d39815d04b8010b?s=300" # optional
+  #   imageTitle: "" # optional
+  #   imageWidth: 120 # custom size
+  #   imageHeight: 120 # custom size
 
   description: "Blog about infrastructure, self-hosting and other technical stuff"
 
