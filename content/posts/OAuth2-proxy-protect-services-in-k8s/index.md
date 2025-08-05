@@ -2,8 +2,9 @@
 title: "OAuth2-proxy: protect services in kubernetes"
 date: 2025-08-05T21:14:12+03:00
 cover:
-    image: https://alikhil.dev/images/posts/oauth2-proxy/chatgpt-header.png
+    image: images/chatgpt-header.png
     alt: "ChatGPT: oauth2-proxy protecting services in k8s"
+    hiddenInList: true
 categories:
 - networking
 - opensource
@@ -16,7 +17,7 @@ tags:
 - oauth2-proxy
 ---
 
-The original post  wrote [about oauth2-proxy](https://alikhil.dev/posts/oauth2-proxy-for-kubernetes-services/) over seven years ago was quite popular at the time and attracted a lot of organic traffic to my blog, which still benefits my SEO today. Since the tutorial had become outdated, I decided to rewrite it.
+The original post wrote [about oauth2-proxy](https://alikhil.dev/posts/oauth2-proxy-for-kubernetes-services/) over seven years ago was quite popular at the time and attracted a lot of organic traffic to my blog, which still benefits my SEO today. Since the tutorial had become outdated, I decided to rewrite it.
 
 <!--more-->
 

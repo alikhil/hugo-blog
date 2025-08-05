@@ -31,6 +31,12 @@ In this post, I will go through configuring [Bitly OAuth2 proxy](https://github.
 
 <!--more-->
 
+### UPD 5/08/2025
+
+There is a fresh tutorial about [oauth2-proxy](https://alikhil.dev/posts/oauth2-proxy-protect-services-in-k8s/)
+
+---
+
 A few days ago I was configuring [SSO](https://en.wikipedia.org/wiki/Single_sign-on) for our internal dev-services in [KE Technologies](https://github.com/KazanExpress).
 
 And I spent the whole to make it work properly, and at the end I decided that I will share my experience by writing this post, hoping that it will help others(and possibly me in the future) to go through this process.

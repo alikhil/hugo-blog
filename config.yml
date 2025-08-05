@@ -12,7 +12,6 @@ pagination:
 
 googleAnalytics: G-RSGLKK3DPR
 
-useCustomAnalytics: true
 
 markup:
   goldmark:
@@ -65,6 +64,7 @@ outputs:
 
 
 params:
+  useCustomAnalytics: true
   author:
   - Alik Khilazhev
   env: production
