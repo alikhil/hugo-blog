@@ -12,6 +12,8 @@ pagination:
 
 googleAnalytics: G-RSGLKK3DPR
 
+useCustomAnalytics: true
+
 markup:
   goldmark:
     renderer:
