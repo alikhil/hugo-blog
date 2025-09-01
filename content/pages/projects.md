@@ -14,6 +14,8 @@ showDate: false
 
 - [1mgr.xyz](https://1mgr.xyz) - On-demand mirror for images from dockerhub based on GitHub Actions and GitHub package registry.
 
+- [kubectl-find](https://github.com/alikhil/kubectl-find) - missing plugin for kubectl to find resources in k8s using name pattern, age and many other properties.
+
 ## Open Source Contributions
 
 Here is a list of opensource projects I've worked on:
