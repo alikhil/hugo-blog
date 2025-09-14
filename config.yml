@@ -84,7 +84,7 @@ params:
   #   imageWidth: 120 # custom size
   #   imageHeight: 120 # custom size
   metaTitle: alikhil | software engineering, kubernetes & self-hosting
-  description: "Blogging on software engineering, Kubernetes, self-hosting, and open source. Explore guides, notes, and personal stories at alikhil.dev"
+  description: "Blog on software engineering, Kubernetes, self-hosting, and open source. Explore guides, notes, and personal stories"
   keywords: ["kubernetes", "software engineering", "helm", "golang", "self-hosting", "homelab", "devops", "sre"]
 
   ShowShareButtons: true
