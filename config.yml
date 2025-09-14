@@ -83,8 +83,9 @@ params:
   #   imageTitle: "" # optional
   #   imageWidth: 120 # custom size
   #   imageHeight: 120 # custom size
-
-  description: "Blog about infrastructure, self-hosting and other technical stuff"
+  metaTitle: alikhil | software engineering, kubernetes & self-hosting
+  description: "Blogging on software engineering, Kubernetes, self-hosting, and open source. Explore guides, notes, and personal stories at alikhil.dev"
+  keywords: ["kubernetes", "software engineering", "helm", "golang", "self-hosting", "homelab", "devops", "sre"]
 
   ShowShareButtons: true
   ShowReadingTime: true
@@ -107,8 +108,6 @@ params:
       url: 'https://stackoverflow.com/users/3443964/alik-khilazhev'
     - name: linkedin
       url: 'https://www.linkedin.com/in/alikhil/'
-    - name: vas3k.club
-      url: https://vas3k.club/user/alikhil/
     - name: rss-simple
       url: index.xml
 
