@@ -22,3 +22,5 @@ git push origin master
 
 # Come Back up to the Project Root
 cd ..
+
+# gh release create v28.09.2025 -F new-post.md
