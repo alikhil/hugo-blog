@@ -26,7 +26,7 @@ In this post, I will share what I have learned about implementing proper gracefu
 
 ## The Problem: Hidden Errors During Pod Termination
 
-{{< figure align=center src="/images/posts/k8s-graceful-shutdown.png" title="ChatGPT: draw funny picture of Kubernetes pod gracefully shutting down" >}}
+{{< img align=center src="images/posts/k8s-graceful-shutdown.png" title="ChatGPT: draw funny picture of Kubernetes pod gracefully shutting down" >}}
 
 If you are running services on Kubernetes, you have probably noticed that even with rolling updates (where Kubernetes gradually replaces pods), you might still see errors during deployment. This is especially annoying when you are trying to maintain "zero-downtime" systems.
 

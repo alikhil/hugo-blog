@@ -109,7 +109,7 @@ Does this feature fully solve the problem described above? Only partially.
 
 First, most application runtimes still impose fundamental constraints. Java and Python runtimes do not currently support resizing memory limits without a restart. This limitation exists outside of Kubernetes itself and is tracked in the OpenJDK project via [an open ticket](https://bugs.openjdk.org/browse/JDK-8359211).
 
-{{< figure align=center src="images/runtimes-supporting-in-place-memory-resize.png" title="In-Place Pod Resize in Kubernetes: Dynamic Resource Management Without Restarts - Tim Allclair & Mofi Rahman, Google" >}}
+{{< img align=center src="/images/posts/in-place-pod-resize/runtimes-supporting-in-place-memory-resize.png" title="In-Place Pod Resize in Kubernetes: Dynamic Resource Management Without Restarts - Tim Allclair & Mofi Rahman, Google" >}}
 
 Second, Kubernetes does not yet support decreasing memory limits, even with in-place Pod Resize enabled. This is a known limitation documented in the enhancement proposal for [memory limit decreases](https://github.com/kubernetes/enhancements/tree/758ea034908515a934af09d03a927b24186af04c/keps/sig-node/1287-in-place-update-pod-resources#memory-limit-decreases).
 
