@@ -5,7 +5,7 @@ categories:
 - programming
 - opensource
 tags:
-- Go
+- golang
 - http
 
 ---

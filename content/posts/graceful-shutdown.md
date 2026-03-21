@@ -7,7 +7,7 @@ categories:
 - devops
 
 tags:
-- go
+- golang
 - kubernetes
 - tutorial
 ---

@@ -9,7 +9,7 @@ thumbnailImagePosition: left
 thumbnailImage: "images/gopher.png"
 
 tags:
-- go
+- golang
 - vscode
 - tutorial
 - quickstart
@@ -17,10 +17,6 @@ tags:
 categories:
 - programming
 
-tags:
-- Go
-- vscode
-- tutorial
 ---
 
 Hi folks!
