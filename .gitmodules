@@ -7,4 +7,4 @@
 	branch = master
 [submodule "themes/PaperModX"]
 	path = themes/PaperModX
-	url = https://github.com/reorx/hugo-PaperModX.git
+	url = https://github.com/alikhil/hugo-PaperModX.git
