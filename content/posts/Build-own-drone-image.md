@@ -11,7 +11,7 @@ thumbnailImage: "images/posts/drone-logo.png"
 thumbnailImagePosition: left
 
 tags:
-- ci/cd
+- ci-cd
 - tutorial
 - drone.io
 - docker

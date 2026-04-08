@@ -5,22 +5,16 @@ coverImage: https://user-images.githubusercontent.com/7482065/59222959-6c216900-
 coverMeta: out
 coverSize: partial
 
-date: 2018-10-21T22:42:44+03:00
+date: "2018-10-21T22:42:44+03:00"
 
 thumbnailImage: "images/posts/world.jpg"
-thumbnailImagePosition: left
 
 categories:
 - languages
 
 tags:
 - learning
-- languages
 - spanish
-
-tags:
-- spanish
-- language
 - tips
 - gamification
 ---

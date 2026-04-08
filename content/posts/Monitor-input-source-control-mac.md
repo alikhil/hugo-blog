@@ -7,9 +7,9 @@ categories:
 
 tags:
 
-- Tutorial
-- Tips
-- Mac
+- tutorial
+- tips
+- mac
 
 ---
 

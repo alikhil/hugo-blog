@@ -9,20 +9,14 @@ thumbnailImage: "images/posts/k8s_logo.png"
 thumbnailImagePosition: left
 
 tags:
-- proxy
-- authentication
-- kubernetes
-- google cloud platform
-
-categories:
-- devops
-
-tags:
 - oauth2-proxy
 - authentication
 - kubernetes
-- google cloud
+- google cloud platform
 - tutorial
+
+categories:
+- devops
 ---
 
 Hello, folks!
