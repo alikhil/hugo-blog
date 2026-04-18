@@ -7,7 +7,7 @@ tags:
 - cdn
 - rum
 - performance
-
+canonicalURL: https://cdnpulse.io/blog/what-is-a-cdn-and-why-it-matters/
 ---
 
 With the rapid growth of GenAI solutions and the continuous launch of new applications, understanding the fundamental challenges and solutions of the web is becoming increasingly important.
