@@ -5,9 +5,6 @@ description: "Kubernetes guides and notes about graceful shutdown, OAuth2 Proxy,
 url: /kubernetes/
 schemaType: "CollectionPage"
 hidden: true
-build:
-  list: never
-  render: always
 clearReading: true
 showMeta: false
 comments: false

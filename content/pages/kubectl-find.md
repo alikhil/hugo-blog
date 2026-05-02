@@ -8,9 +8,6 @@ applicationCategory: "DeveloperApplication"
 operatingSystem: "Linux, macOS, Windows"
 codeRepository: "https://github.com/alikhil/kubectl-find"
 hidden: true
-build:
-  list: never
-  render: always
 clearReading: true
 showMeta: false
 comments: false

@@ -5,9 +5,6 @@ description: "Open source tools and utilities built by Alik Khilazhev."
 url: /tools/
 schemaType: "CollectionPage"
 hidden: true
-build:
-  list: never
-  render: always
 clearReading: true
 showMeta: false
 comments: false

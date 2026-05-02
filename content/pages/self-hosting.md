@@ -5,9 +5,6 @@ description: "Self-hosting, home networking, RouterOS, WireGuard, and personal a
 url: /self-hosting/
 schemaType: "CollectionPage"
 hidden: true
-build:
-  list: never
-  render: always
 clearReading: true
 showMeta: false
 comments: false

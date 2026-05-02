@@ -5,9 +5,6 @@ description: "Main topic hubs for Kubernetes, self-hosting, and tools on alikhil
 url: /topics/
 schemaType: "CollectionPage"
 hidden: true
-build:
-  list: never
-  render: always
 clearReading: true
 showMeta: false
 comments: false
