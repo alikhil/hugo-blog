@@ -35,6 +35,10 @@ menu:
       identifier: home
       name: Home
       url: /
+    - weight: 3
+      identifier: topics
+      name: Topics
+      url: /topics/
     - weight: 10
       identifier: search
       name: Search
@@ -69,6 +73,8 @@ params:
   - Alik Khilazhev
   env: production
   defaultTheme: auto
+  mainSections:
+    - posts
   homeInfoParams:
     Title: "Alik Khilazhev"
     Content: DevOps / Site Reliability Engineer, Open Source Enthusiast
@@ -86,6 +92,12 @@ params:
   metaTitle: alikhil | software engineering, kubernetes & self-hosting
   description: "Blog on software engineering, Kubernetes, self-hosting, and open source. Explore guides, notes, and personal stories"
   keywords: ["kubernetes", "software engineering", "helm", "golang", "self-hosting", "homelab", "devops", "sre"]
+  schema:
+    sameAs:
+      - "https://github.com/alikhil"
+      - "https://t.me/alikhil"
+      - "https://stackoverflow.com/users/3443964/alik-khilazhev"
+      - "https://www.linkedin.com/in/alikhil/"
 
   ShowShareButtons: true
   ShowReadingTime: true

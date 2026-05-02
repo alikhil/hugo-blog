@@ -1,0 +1,103 @@
+{{ with .page }}
+{{- $authorName := index site.Params.author 0 | default site.Title -}}
+{{- $personID := printf "%s#person" site.BaseURL -}}
+{{- $websiteID := printf "%s#website" site.BaseURL -}}
+{{- $personRef := dict "@type" "Person" "@id" $personID "name" $authorName -}}
+{{- $sameAs := site.Params.schema.sameAs | default slice -}}
+
+{{- if .IsHome }}
+{{- $person := dict
+  "@type" "Person"
+  "@id" $personID
+  "name" $authorName
+  "alternateName" site.Title
+  "url" site.BaseURL
+  "image" site.Params.homeInfoParams.imageUrl
+  "jobTitle" "Cloud Infrastructure Engineer"
+  "knowsAbout" (slice "Kubernetes" "DevOps" "Site Reliability Engineering" "Go" "Python" "Self-hosting" "Open Source")
+  "sameAs" $sameAs
+-}}
+{{- $website := dict
+  "@type" "WebSite"
+  "@id" $websiteID
+  "url" site.BaseURL
+  "name" site.Title
+  "description" site.Params.description
+  "publisher" (dict "@id" $personID)
+  "inLanguage" site.LanguageCode
+  "potentialAction" (dict
+    "@type" "SearchAction"
+    "target" (dict "@type" "EntryPoint" "urlTemplate" (printf "%ssearch/?q={search_term_string}" site.BaseURL))
+    "query-input" "required name=search_term_string")
+-}}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@graph" (slice $person $website) | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- else if or .IsPage .IsSection }}
+{{/* BreadcrumbList */}}
+{{- $items := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" site.BaseURL) -}}
+{{- with .Parent }}
+  {{- if not .IsHome }}
+    {{- $items = $items | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+  {{- end }}
+{{- end }}
+{{- $items = $items | append (dict "@type" "ListItem" "position" (add (len $items) 1) "name" .Title "item" .Permalink) -}}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $items | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+
+{{- if and .IsPage (eq .Section "posts") }}
+{{- $keywords := .Params.keywords | default .Params.tags | default slice -}}
+{{- $article := dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "@id" (printf "%s#blogposting" .Permalink)
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  "headline" (.Title | plainify)
+  "name" (.Title | plainify)
+  "description" ((.Description | default .Summary) | plainify)
+  "keywords" $keywords
+  "wordCount" .WordCount
+  "inLanguage" (.Language.Lang | default site.LanguageCode)
+  "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "author" $personRef
+  "publisher" $personRef
+  "isPartOf" (dict "@id" $websiteID)
+-}}
+{{- with .Params.cover.image }}
+  {{- $image := . | absURL -}}
+  {{- if not ($.Params.cover.absolute | default false) }}
+    {{- $image = path.Join $.RelPermalink . | absURL -}}
+  {{- end }}
+  {{- $article = merge $article (dict "image" (slice $image)) -}}
+{{- end }}
+<script type="application/ld+json">
+{{ $article | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- else if .IsPage }}
+{{- $schemaType := .Params.schemaType | default "WebPage" -}}
+{{- $webpage := dict
+  "@context" "https://schema.org"
+  "@type" $schemaType
+  "@id" (printf "%s#webpage" .Permalink)
+  "url" .Permalink
+  "name" (.Title | plainify)
+  "description" ((.Description | default .Summary) | plainify)
+  "isPartOf" (dict "@id" $websiteID)
+  "about" $personRef
+-}}
+{{- if eq $schemaType "SoftwareApplication" }}
+  {{- $webpage = merge $webpage (dict
+    "applicationCategory" (.Params.applicationCategory | default "DeveloperApplication")
+    "operatingSystem" (.Params.operatingSystem | default "Linux, macOS, Windows")
+    "author" $personRef
+    "codeRepository" .Params.codeRepository)
+  -}}
+{{- end }}
+<script type="application/ld+json">
+{{ $webpage | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- end }}
+{{- end -}}
+{{- end -}}

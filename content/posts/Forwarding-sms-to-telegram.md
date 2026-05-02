@@ -3,7 +3,7 @@ title: "Forwarding SMS to Telegram"
 date: 2024-10-26T14:11:43+03:00
 categories:
 - linux
-- selfhosting
+- self-hosting
 - opensource
 tags:
 - sim

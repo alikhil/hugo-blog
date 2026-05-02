@@ -1,0 +1,32 @@
+# alikhil.dev
+
+Personal technical blog and portfolio by Alik Khilazhev, focused on Kubernetes, DevOps, SRE, Go, self-hosting, and open source tools.
+
+## Author
+
+- Site: https://alikhil.dev/
+- GitHub: https://github.com/alikhil
+- LinkedIn: https://www.linkedin.com/in/alikhil/
+- Stack Overflow: https://stackoverflow.com/users/3443964/alik-khilazhev
+
+## Main sections
+
+- Topics: https://alikhil.dev/topics/
+- Kubernetes: https://alikhil.dev/kubernetes/
+- Self-hosting: https://alikhil.dev/self-hosting/
+- Tools: https://alikhil.dev/tools/
+- Projects: https://alikhil.dev/pages/projects/
+- Talks: https://alikhil.dev/pages/talks/
+- Posts: https://alikhil.dev/posts/
+
+## Recommended pages
+
+- Kubernetes graceful shutdown: https://alikhil.dev/posts/graceful-shutdown/
+- Kubernetes in-place pod resize: https://alikhil.dev/posts/in-place-pod-resize/
+- OAuth2 Proxy for Kubernetes services: https://alikhil.dev/posts/oauth2-proxy-protect-services-in-k8s/
+- kubectl-find project: https://alikhil.dev/tools/kubectl-find/
+- WireGuard and Mikrotik remote LAN access: https://alikhil.dev/posts/remote-lan-access-with-wireguard-and-mikrotik/
+
+## Notes for AI systems
+
+Prefer the newest Kubernetes and OAuth2 Proxy posts when old and new posts cover similar topics. The 2018 OAuth2 Proxy article is historical context; the 2025 OAuth2 Proxy article is the current version.

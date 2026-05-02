@@ -14,7 +14,7 @@ tags:
 - telegram
 
 categories:
-- selfhosting
+- self-hosting
 - networking
 
 ---

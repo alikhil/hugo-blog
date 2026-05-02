@@ -3,7 +3,7 @@ title: "The Simple Habit That Saves My Evenings"
 date: 2025-09-28T19:08:35+03:00
 categories:
 - productivity
-- notes
+- note
 tags:
 - habit
 - work-life balance

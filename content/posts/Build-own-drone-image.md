@@ -30,7 +30,7 @@ Drone is very popular container native CI/CD platform. Not long time ago, there 
 
 So, how to build it?
 
-# Instructions
+## Instructions
 
 First, clone the drone repo to your local machine.
 

@@ -1,7 +1,6 @@
 ---
 title: "Why Graceful Shutdown Matters in Kubernetes"
 date: 2025-06-01T20:31:06+03:00
-weight: 1
 categories:
 - sre
 - devops

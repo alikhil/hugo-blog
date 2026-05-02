@@ -3,7 +3,7 @@ title: "Remote LAN access with WireGuard and Mikrotik"
 date: 2025-04-13T14:11:43+03:00
 categories:
 - linux
-- selfhosting
+- self-hosting
 - opensource
 - networking
 

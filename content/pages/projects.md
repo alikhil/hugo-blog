@@ -1,6 +1,8 @@
 ---
 title: "Projects"
 date: 2025-03-19T23:10:25+03:00
+description: "Open source projects, tools, and infrastructure work by Alik Khilazhev."
+schemaType: "ProfilePage"
 clearReading: true
 showMeta: false
 comments: false
@@ -12,9 +14,9 @@ showDate: false
 
 ## My Projects
 
-- [1mgr.xyz](https://1mgr.xyz) - On-demand mirror for images from dockerhub based on GitHub Actions and GitHub package registry.
+- [kubectl-find](/tools/kubectl-find/) - a `kubectl` plugin inspired by UNIX `find`. It searches Kubernetes resources by name, status, age, image, node, and custom `jq` conditions. It is written in Go and distributed through Krew as `fd`.
 
-- [kubectl-find](https://github.com/alikhil/kubectl-find) - missing plugin for kubectl to find resources in k8s using name pattern, age and many other properties.
+- [1mgr.xyz](https://1mgr.xyz) - on-demand mirror for Docker Hub images based on GitHub Actions and GitHub package registry. I use it to make image pulls more repeatable when working with containers.
 
 ## Open Source Contributions
 

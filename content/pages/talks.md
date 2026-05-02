@@ -1,6 +1,8 @@
 ---
 title: "Talks"
 date: 2025-03-19T23:10:25+03:00
+description: "Conference and meetup talks by Alik Khilazhev on Go, CI/CD, Drone.io, Terraform, and infrastructure automation."
+schemaType: "CollectionPage"
 clearReading: true
 showMeta: false
 comments: false
