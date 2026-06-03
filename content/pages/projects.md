@@ -2,7 +2,8 @@
 title: "Projects"
 date: 2025-03-19T23:10:25+03:00
 description: "Open source projects, tools, and infrastructure work by Alik Khilazhev."
-schemaType: "ProfilePage"
+# Projects is a curated list of work, not a person/creator profile.
+schemaType: "CollectionPage"
 clearReading: true
 showMeta: false
 comments: false
