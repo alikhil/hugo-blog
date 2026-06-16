@@ -1,6 +1,8 @@
 ---
 title: "Remote LAN access with WireGuard and Mikrotik"
 date: 2025-04-13T14:11:43+03:00
+lastMod: 2026-06-16T20:31:06+03:00
+description: "Step-by-step guide to setting up remote LAN access using WireGuard on a MikroTik hEX S router and a cloud VM. Covers RouterOS CLI, firewall rules, routing, and client configuration."
 categories:
 - linux
 - self-hosting
@@ -17,6 +19,8 @@ tags:
 Recently I have configured out how to access my home and cloud network remotely using WireGuard and Mikrotik Hex S router. With this step-by-step tutorial I will show you (and perhaps my future self) how to do it.
 
 <!--more-->
+
+**Tested with**: MikroTik hEX S (RB760iGS) · RouterOS 7.x · Ubuntu 22.04 LTS · WireGuard hub-and-spoke topology
 
 ## Requirements
 
@@ -141,7 +145,7 @@ systemctl restart wg-quick@wg0
 
 ```
 
-### II. Mikrotik configuration
+### II. MikroTik hEX S WireGuard setup
 
 I will use Mikrotik command line interface (CLI) to configure the router. You can use Winbox or WebFig if you prefer.
 
@@ -179,7 +183,7 @@ Here we add cloud vm as a peer to the Mikrotik router's wireguard. The public ke
 /ip route disabled=no distance=1 dst-address=172.21.0.0/16 gateway=cloud-wg routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 ```
 
-### 3. Add WireGuard peer (VM)
+### III. Add WireGuard peer (VM)
 
 ```bash
 sudo nano /etc/wireguard/wg0.conf
@@ -253,7 +257,7 @@ dig google.com @172.121.0.114
 
 </details>
 
-## IV. Add first client device as a peer
+### IV. Add first client device as a peer
 
 I recommend you to use your smartphone as first client device, because it can work from both home WiFi and mobile data. This way you can test the connection from both networks.
 
@@ -262,7 +266,7 @@ Also, install on your smartphone:
 - WireGuard app ([iOS](https://apps.apple.com/us/app/wireguard/id1441195209), [Android](https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en&pli=1))
 - Network debugging app ([iOS](https://apps.apple.com/bo/app/inettools-ping-dns-port-scan/id561659975), [Android](https://play.google.com/store/apps/details?id=com.ulfdittmer.android.ping&hl=en))
 
-### 1. Create keys for the client
+#### 1. Create keys for the client
 
 Install Wireguard app for your client OS.
 
@@ -274,7 +278,7 @@ Or you can generate keys on the cloud server and then copy them to the client de
 wg genkey | tee peer-privatekey | wg pubkey > peer-publickey
 ```
 
-### 2. Add the client as a peer to WireGuard config on cloud server
+#### 2. Add the client as a peer to WireGuard config on cloud server
 
 On the cloud server, edit the WireGuard config file and add the client as a peer.
 
@@ -297,17 +301,17 @@ sudo systemctl restart wg-quick@wg0
 wg show
 ```
 
-### 3. Continue configuring the client device
+#### 3. Continue configuring the client device
 
 You already have public and private keys for the client device, other configuration parameters are:
 
-#### Interface
+##### Interface
 
 - **Address** - It's address of peer in wireguard subnet. Put the same address you set in `AllowedIPs` field in previous step.
 - **DNS servers** - if you have adguard/pihole running on the cloud server, you can use it as a DNS server. Put it's IP address here.
 - **MTU** and **ListenPort** - you can leave them empty, they will be set automatically.
 
-#### Peer
+##### Peer
 
 - **Endpoint** - cloud server IP address and port (27277)
 - **Public key** - public key of the cloud server
@@ -344,7 +348,17 @@ td, th {
 |---|---|---|
 |  ![ping cloud](/images/posts/mikrotik-wg/screen-ping-vm.jpeg) | ![ping home](/images/posts/mikrotik-wg/screen-ping-home.jpeg)   | ![port scan](/images/posts/mikrotik-wg/screen-port-scan.jpeg)  |
 
-## V. Bonus. DNS configuration
+### V. Troubleshooting
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Handshake shows "never" | Firewall blocks UDP port on cloud VM, or wrong public key | Check `ufw`/`iptables` allows the WireGuard UDP port; verify both peers have each other's correct public key |
+| Peer handshakes OK but home LAN is unreachable | Missing route or `AllowedIPs` too narrow | On cloud VM, ensure MikroTik peer `AllowedIPs` includes `192.168.0.0/16`; on MikroTik, add a route for cloud subnets via `cloud-wg` |
+| Handshake works but DNS fails | Wrong DNS IP in client config, or AdGuard not listening on WireGuard interface | Confirm DNS container IP is reachable over WireGuard (`ping` it); check AdGuard binds to `0.0.0.0` not just `localhost` |
+| `AllowedIPs` routing mistake | Client routes all traffic through VPN | Set `AllowedIPs` to specific subnets only (split-tunnel), not `0.0.0.0/0`, unless you want full-tunnel |
+| MikroTik shows peer but no traffic | `persistent-keepalive` not set, NAT drops idle UDP | Add `persistent-keepalive=25s` to the MikroTik peer config |
+
+### VI. Bonus. DNS configuration
 
 Since I have 2 adguard instances and I use them as DNS servers everywhere, I will add DNS records for accessing my services:
 
@@ -355,7 +369,7 @@ Thus, I can access my services using domain names instead of IP addresses.
 
 <img src="/images/posts/mikrotik-wg/dns.png" width="30%">
 
-## VI. Final thoughts
+## Final thoughts
 
 I hope this tutorial was helpful for you. I will keep it updated if I find any issues or improvements.
 

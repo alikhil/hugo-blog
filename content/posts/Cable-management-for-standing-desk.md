@@ -1,6 +1,7 @@
 ---
 title: "Note on cable management for standing desk"
 date: 2025-07-11T20:00:00+03:00
+lastMod: 2026-06-16T20:31:06+03:00
 categories:
 - desk
 - note
@@ -23,7 +24,7 @@ Here's what my setup looked like before I made all the changes I mentioned.
 
 ![setup before reorganization](/images/posts/cable-management/before-front.jpg)
 
-As you can see, I've got a work laptop, a Mac mini, a monitor on its own stand, a journal, AirPods, and a few other things. I also bought a USB switch at some point because I got tired of plugging and unplugging my webcam manually in my [KVM-less setup](https://alikhil.dev/posts/how-to-use-3-computers-without-kvm/).
+As you can see, I've got a work laptop, a Mac mini, a monitor on its own stand, a journal, AirPods, and a few other things. I also bought a USB switch at some point because I got tired of plugging and unplugging my webcam manually in my [KVM-less setup](https://alikhil.dev/posts/how-to-use-3-computers-without-kvm/). For switching the monitor between computers without touching any buttons, I use BetterDisplay with DDC/CI hotkeys — details in [Control Monitor Input Source on macOS with BetterDisplay and DDC](https://alikhil.dev/posts/monitor-input-source-control-mac/).
 
 ## Here's what I've done
 

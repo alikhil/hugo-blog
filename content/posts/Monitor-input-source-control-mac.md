@@ -1,6 +1,8 @@
 ---
-title: "Monitor input source control on Mac"
+title: "Control Monitor Input Source on macOS with BetterDisplay and DDC"
 date: 2024-10-16T20:31:06+03:00
+lastMod: 2026-06-16T20:31:06+03:00
+description: "Learn how to switch monitor input sources on macOS using BetterDisplay, DDC/CI, and CLI commands. Configure keyboard hotkeys via the paid app or free Raycast scripts."
 categories:
 
 - mac
@@ -18,6 +20,12 @@ If you as me have single monitor and 2 Mac devices (for example, I have corporat
 In this post I will show you how to configure hotkeys for that.
 
 <!--more-->
+
+> **Quick answer**
+>
+> - **App**: Use [BetterDisplay](https://github.com/waydabber/BetterDisplay) — it exposes a CLI and GUI to switch monitor inputs via DDC/CI.
+> - **When DDC/CI works**: Your monitor must support the DDC/CI protocol and have it enabled. Most modern displays (Dell, LG, BenQ, etc.) support it.
+> - **When it won't work**: Some monitors, USB-C hubs, or cheap HDMI adapters block DDC signals. If BetterDisplay shows no DDC Input Sources, your hardware path doesn't pass DDC — try a direct cable instead of a hub or adapter.
 
 ## Hardware
 
@@ -58,6 +66,26 @@ Click "Record Shortcut" and press the key combination you want to use, for examp
 If you like me don't want to pay for 40$ for single feature there is a hacky way to do it.
 
 We need an app that can handle hotkeys and run shell commands. I use [Raycast](https://www.raycast.com/), so called "Spotlight on steroids" and it can handle custom hotkeys. Or you can use any other app you like.
+
+#### BetterDisplay CLI commands
+
+BetterDisplay ships a CLI you can call from any script or terminal. Here are the most useful commands:
+
+```bash
+# List all detected monitors and their current input source
+/Applications/BetterDisplay.app/Contents/MacOS/BetterDisplay get -vcp=inputSelect
+
+# Switch to a specific input by DDC value (replace 18 with your value)
+/Applications/BetterDisplay.app/Contents/MacOS/BetterDisplay set -ddc=18 -vcp=inputSelect
+
+# Cycle to the next available input source
+/Applications/BetterDisplay.app/Contents/MacOS/BetterDisplay set -nextDDCInput -vcp=inputSelect
+
+# Target a specific monitor by display index (0-based) when you have several
+/Applications/BetterDisplay.app/Contents/MacOS/BetterDisplay set -ddc=18 -vcp=inputSelect -displayIndex=0
+```
+
+The DDC value (`-ddc=`) maps to the physical port. You can find the right values in *Settings -> Displays -> "Your monitor name" -> DDC Input Sources* (see the **Value** column).
 
 #### Configuring shell command
 

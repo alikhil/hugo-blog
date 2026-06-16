@@ -1,0 +1,7 @@
+{{- /* Publish all image assets so they're available for raw HTML <img> tags.
+     Hugo only copies assets/ files when accessed via Hugo Pipes; markdown images
+     go through the render-image hook (resources.Get) automatically, but raw HTML
+     <img> tags bypass that. This loop forces all images to be published. */ -}}
+{{- range resources.Match "images/**" -}}
+  {{- $_ := .RelPermalink -}}
+{{- end -}}
