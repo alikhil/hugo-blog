@@ -1,6 +1,10 @@
 ---
-title: "Storing and using secrets in Mikrotik RouterOS"
+title: "Storing and Using Secrets in MikroTik RouterOS"
 date: 2025-03-30T16:01:25+03:00
+lastMod: 2026-06-16T20:31:06+03:00
+description: "How to securely store and use secrets (passwords, tokens, API keys) in MikroTik RouterOS scripts without hardcoding them in plain text."
+aliases:
+- /posts/saving-and-using-secrets-in-mikrotitk-routeros/
 
 cover:
     image: "https://en.meming.world/images/en/8/8e/All_Right_Then%2C_Keep_Your_Secrets.jpg"

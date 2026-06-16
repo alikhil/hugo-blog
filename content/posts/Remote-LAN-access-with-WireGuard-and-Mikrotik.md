@@ -376,3 +376,7 @@ I hope this tutorial was helpful for you. I will keep it updated if I find any i
 If you have any questions or suggestions, feel free to leave a comment below.
 
 Credits to [@laroberto](https://www.laroberto.com/) for their [guide on LAN access with WireGuard](https://www.laroberto.com/remote-lan-access-with-wireguard/). I followed it to set up the initial configuration and then adapted it to my needs.
+
+## Recommended reading
+
+- [Storing and Using Secrets in MikroTik RouterOS](/posts/saving-and-using-secrets-in-mikrotitk-routeros/) — how to avoid hardcoding passwords and tokens in your RouterOS scripts.
