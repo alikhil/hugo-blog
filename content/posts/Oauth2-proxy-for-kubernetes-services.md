@@ -1,6 +1,8 @@
 ---
 title: "Oauth2 Proxy for Kubernetes Services"
 date: 2018-05-20T21:30:36+03:00
+lastMod: 2026-06-16T20:31:06+03:00
+canonicalURL: https://alikhil.dev/posts/oauth2-proxy-protect-services-in-k8s/
 coverImage: https://cdn-images-1.medium.com/max/2000/1*_MUGy2oo79pWpaBMFVtNsA.jpeg
 coverMeta: out
 coverSize: partial
@@ -25,9 +27,9 @@ In this post, I will go through configuring [Bitly OAuth2 proxy](https://github.
 
 <!--more-->
 
-### UPD 5/08/2025
-
-There is a fresh tutorial about [oauth2-proxy](https://alikhil.dev/posts/oauth2-proxy-protect-services-in-k8s/)
+> ⚠️ **This guide is outdated (written in 2018).** The libraries, Helm chart versions, and ingress annotations referenced here no longer reflect current best practices.
+>
+> Please read the updated guide instead: [**Protect Kubernetes Services with OAuth2 Proxy, ingress-nginx, and Pocket ID**](https://alikhil.dev/posts/oauth2-proxy-protect-services-in-k8s/)
 
 ---
 

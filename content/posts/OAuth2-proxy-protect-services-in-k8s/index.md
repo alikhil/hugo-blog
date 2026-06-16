@@ -1,6 +1,8 @@
 ---
-title: "OAuth2-proxy: protect services in kubernetes"
+title: "Protect Kubernetes Services with OAuth2 Proxy, ingress-nginx, and Pocket ID"
 date: 2025-08-05T21:14:12+03:00
+lastMod: 2026-06-16T20:31:06+03:00
+description: "Step-by-step guide to protecting internal Kubernetes services using OAuth2 Proxy, ingress-nginx auth annotations, and Pocket ID as the OIDC provider. Covers Helm values, cookie config, ingress annotations, and troubleshooting."
 cover:
     image: images/chatgpt-header.png
     alt: "ChatGPT: oauth2-proxy protecting services in k8s"
@@ -261,6 +263,16 @@ ingress:
 Go to whoami url and check if oauth2-proxy redirects you to Pocket ID like in the demo:
 
 ![Demo](/images/posts/oauth2-proxy/demo.gif)
+
+## Troubleshooting
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Redirect loops back to login after successful auth | `redirect_url` in oauth2-proxy config doesn't match the callback URL registered in Pocket ID | Set both to exactly `https://k8s.alikhil.dev/oauth2/callback` |
+| `cookie_secret` error on startup | Cookie secret is not exactly 16, 24, or 32 bytes after base64 decode | Regenerate: `openssl rand -base64 32 \| head -c 32 \| base64` |
+| 401 on every request despite logging in | `cookie_domains` / `whitelist_domains` doesn't cover the protected service domain | Add `.k8s.alikhil.dev` to both `cookie_domains` and `whitelist_domains` in the config |
+| Protected service returns 401, not redirecting | `auth-url` annotation points to wrong service name or namespace | Use the in-cluster DNS form: `http://oauth2-proxy.<namespace>.svc.cluster.local:80/oauth2/auth` |
+| Auth works but Pocket ID group check fails | `allowed_groups` set but `scope` doesn't include `groups` | Add `groups` to the `scope` config option and ensure the Pocket ID client returns group claims |
 
 ## Takeaways
 
