@@ -24,7 +24,7 @@
   "name" site.Title
   "description" site.Params.description
   "publisher" (dict "@id" $personID)
-  "inLanguage" site.LanguageCode
+  "inLanguage" site.Language.Locale
   "potentialAction" (dict
     "@type" "SearchAction"
     "target" (dict "@type" "EntryPoint" "urlTemplate" (printf "%ssearch/?q={search_term_string}" site.BaseURL))
@@ -58,7 +58,7 @@
   "description" ((.Description | default .Summary) | plainify)
   "keywords" $keywords
   "wordCount" .WordCount
-  "inLanguage" (.Language.Lang | default site.LanguageCode)
+  "inLanguage" (.Language.Lang | default site.Language.Locale)
   "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")
   "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
   "author" $personRef

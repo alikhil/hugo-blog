@@ -1,7 +1,7 @@
 # reference https://github.com/reorx/blog/blob/master/config.yaml
 
 baseURL: 'https://alikhil.dev/'
-languageCode: en-us
+locale: en-us
 defaultContentLanguage: en-us
 title: alikhil
 theme: PaperModX

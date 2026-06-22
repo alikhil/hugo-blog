@@ -19,6 +19,14 @@ Reference existing posts in `/content/posts/` for style consistency:
 - Write for both beginners and experienced readers
 - Include personal experiences and observations when relevant
 
+### Personal Technical Notes
+For opinionated or experience-based posts, preserve the author's first-person voice:
+- Keep concrete pain points and examples ("this took 40 minutes", "installer scripts broke my setup")
+- Prefer direct personal framing over neutral tutorial language
+- Add structure with headings, but do not over-polish the text into a generic article
+- Use short bridge sentences to connect sections when the story moves from context to problems to decision
+- Avoid stretching the category to fit the technology; use categories for the broad post type and tags for specific tools
+
 ## Post Structure
 
 ### Front Matter
@@ -27,8 +35,11 @@ All posts must include YAML front matter:
 ---
 title: "Post Title Here"
 date: YYYY-MM-DDTHH:MM:SS+03:00
+description: "Short summary for SEO and previews."
 categories:
 - category-name
+tags:
+- specific-topic
 ---
 ```
 
@@ -53,6 +64,8 @@ categories:
 ### Categories & Tags
 - Use categories for broad topics (e.g., "opensource", "kubernetes", "golang")
 - Categories should be lowercase and hyphenated
+- For personal notes about a setup or tool, `note` can be a better category than forcing a broad engineering category
+- Use tags for concrete technologies, tools, and searchable terms (e.g., `nix`, `nix-darwin`, `home-manager`, `homebrew`, `dotfiles`)
 - Common categories based on site keywords:
   - kubernetes
   - software-engineering
@@ -61,6 +74,8 @@ categories:
   - sre
   - self-hosting
   - homelab
+  - mac
+  - note
 
 ### Links
 - Use descriptive link text
@@ -87,8 +102,10 @@ Based on site configuration, suitable topics include:
 ## SEO Considerations
 
 - **Title**: Clear, descriptive, under 60 characters when possible
+- **Description**: Add a concise `description` to new posts. It should explain the specific angle of the post, not just repeat the title.
 - **First paragraph**: Should summarize the post (used as excerpt)
 - **Keywords**: Naturally incorporate relevant keywords from site config
+- **Tags**: Prefer specific searchable tags over broad categories for tools and technologies
 - **Headings**: Use proper hierarchy (H1 is title, start content with H2)
 
 ## Date Format
